@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>TS-CDN: Tri-Stream Coupled Dyadic Networks</title>
+    <title>Overcoming Information and Approximation Errors in Forward Learning via Tri-Stream Coupled Dynamics</title>
 
-    <meta property="og:title" content="TS-CDN: Tri-Stream Coupled Dyadic Networks for Robust Forward-Forward Learning" />
+    <meta property="og:title" content="Overcoming Information and Approximation Errors in Forward Learning via Tri-Stream Coupled Dynamics" />
     <meta property="og:author" content="Anonymous Authors" />
-    <meta property="og:description" content="We propose TS-CDN, a novel forward learning framework designed to solve Information Error and Approximation Error. It achieves SOTA performance (96.12% on CIFAR-10) by introducing dyadic neurons, a tri-stream architecture, and robust optimization strategies (MP-GBS & TF-GVS)."/>
+    <meta property="og:description" content="We propose TSCD, a novel forward learning framework designed to solve Information Error and Approximation Error. It achieves SOTA performance (96.12% on CIFAR-10) by introducing dyadic neurons, a tri-stream architecture, and robust optimization strategies (MP-GBS & TF-GVS)."/>
 
     <link rel="icon" href="img/icon.png" sizes="50x50" type="image/png">
 
@@ -45,7 +45,7 @@
         <!-- Title Section -->
         <div class="row">
             <h2 class="col-md-12 text-center">
-                <b>TS-CDN</b>: Tri-Stream Coupled Dyadic Networks for <br> Robust Forward-Forward Learning<br/>
+                <b>TSCD</b>: Tri-Stream Coupled Dyadic Networks for <br> Robust Forward-Forward Learning<br/>
                 <small>Under Review by International Conference on Machine Learning (ICML)</small>
             </h2>
         </div>
@@ -99,9 +99,9 @@
         <div class="row" style="margin-top: 30px;">
             <div class="col-md-10 col-md-offset-1">
                 <!-- Suggestion: Use Figure 3 from the PDF here -->
-                <img src="img/Overall.jpg" class="img-responsive" style="border: 1px solid #eee; border-radius: 5px;" alt="TS-CDN Architecture Overview">
+                <img src="img/Overall.jpg" class="img-responsive" style="border: 1px solid #eee; border-radius: 5px;" alt="TSCD Architecture Overview">
                 <div class="text-center" style="color: gray; font-style: italic; margin-top: 10px;">
-                    Figure 1: The overall framework of TS-CDN. It comprises three streams: Positive Stream (\(\mathcal{N}_P\)), Negative Stream (\(\mathcal{N}_N\)), and a periodic Cross-Fusion Stream (\(\mathcal{N}_C\)) to mine discriminative features.
+                    Figure 1: The overall framework of TSCD. It comprises three streams: Positive Stream (\(\mathcal{N}_P\)), Negative Stream (\(\mathcal{N}_N\)), and a periodic Cross-Fusion Stream (\(\mathcal{N}_C\)) to mine discriminative features.
                 </div>
             </div>
         </div>
@@ -116,11 +116,11 @@
                     Abstract
                 </h3>
                 <p class="text-justify">
-                    The Forward-Forward (FF) algorithm has emerged as a biologically plausible alternative to backpropagation, yet it suffers from limited representational capacity due to reliance on local signals. In this work, we propose the <strong>Tri-Stream Coupled Dyadic Network (TS-CDN)</strong>, a novel forward learning framework designed to solve two limitations: <strong>Information Error</strong> and <strong>Approximation Error</strong>. TS-CDN introduces three key innovations: 
+                    The Forward-Forward (FF) algorithm has emerged as a biologically plausible alternative to backpropagation, yet it suffers from limited representational capacity due to reliance on local signals. In this work, we propose the <strong>Tri-Stream Coupled Dyadic Network (TSCD)</strong>, a novel forward learning framework designed to solve two limitations: <strong>Information Error</strong> and <strong>Approximation Error</strong>. TSCD introduces three key innovations: 
                     (1) <strong>Dyadic neurons</strong> that theoretically recover exact BP gradients in the weak-nudging limit; 
                     (2) A <strong>tri-stream architecture</strong> with a cross-fusion mechanism that mitigates Information Error by mining latent discriminative features from parallel streams; and 
                     (3) Two complementary optimization strategies, <strong>Multi Plane Forward Gradient Bias Suppression (MP-GBS)</strong> and <strong>Training Free Gradient Variance Suppression (TF-GVS)</strong>, that counteract Approximation Error by minimizing estimation bias and variance, respectively. 
-                    Notably, TS-CDN achieves <strong>96.12%</strong> on CIFAR-10 with ConvNeXt-Tiny and <strong>98.92%</strong> average accuracy on BreakHis with EfficientNetV2-S, significantly narrowing the gap with backpropagation while maintaining full biological plausibility.
+                    Notably, TSCD achieves <strong>96.12%</strong> on CIFAR-10 with ConvNeXt-Tiny and <strong>98.92%</strong> average accuracy on BreakHis with EfficientNetV2-S, significantly narrowing the gap with backpropagation while maintaining full biological plausibility.
                 </p>
             </div>
         </div>
@@ -136,7 +136,7 @@
                 <!-- Subsection 1: Dyadic Neuron -->
                 <h4>1. Dyadic Neuron Dynamics</h4>
                 <p class="text-justify">
-                    Unlike traditional neurons, each neuron in TS-CDN maintains two intrinsic states: an excited state \(\mathbf{u}\) (positive activation) and a relaxed state \(\mathbf{v}\) (negative activation). The inference is defined via a closed-form relaxation:
+                    Unlike traditional neurons, each neuron in TSCD maintains two intrinsic states: an excited state \(\mathbf{u}\) (positive activation) and a relaxed state \(\mathbf{v}\) (negative activation). The inference is defined via a closed-form relaxation:
                 </p>
                 <p class="text-center" style="font-size: 1.0em; background: #f8f9fa; padding: 10px; border-radius: 5px;">
                     $$ \mathbf{u}_l \leftarrow f_l \left( \mathbf{W}_{l-1}\bar{\mathbf{h}}_{l-1} + \frac{\lambda\gamma_l}{\gamma_{l+1}} \mathbf{W}_l^\top (\mathbf{u}_{l+1} - \mathbf{v}_{l+1}) \right) $$
@@ -188,7 +188,7 @@
                     Performance Comparison
                 </h3>
                 <p class="text-justify">
-                    TS-CDN consistently outperforms existing forward learning methods (FF, PEPITA, SymBa, DF-O) across 10 architectures and 13 datasets.
+                    TSCD consistently outperforms existing forward learning methods (FF, PEPITA, SymBa, DF-O) across 10 architectures and 13 datasets.
                 </p>
                 
                 <table class="table table-bordered table-striped table-hover">
@@ -242,7 +242,7 @@
                             <td>86.53</td>
                         </tr>
                         <tr class="highlight-row" style="border: 2px solid #333;">
-                            <td><strong>TS-CDN (Ours)</strong></td>
+                            <td><strong>TSCD (Ours)</strong></td>
                             <td><strong>99.78</strong></td>
                             <td><strong>94.52</strong></td>
                             <td><strong>96.85</strong></td>
@@ -262,7 +262,7 @@
                     </tbody>
                 </table>
                 <p class="text-center small">
-                    TS-CDN significantly narrows the gap with BP, achieving <strong>95.78%</strong> on CIFAR-10, reducing the deficit to ≈1%.
+                    TSCD significantly narrows the gap with BP, achieving <strong>95.78%</strong> on CIFAR-10, reducing the deficit to ≈1%.
                 </p>
             </div>
         </div>
@@ -306,7 +306,7 @@
                   <p class="text-justify">
                     <textarea id="bibtex" class="form-control" rows="6" readonly>
 @inproceedings{tscdn2026,
-    title={TS-CDN: Tri-Stream Coupled Dyadic Networks for Robust Forward-Forward Learning},
+    title={Overcoming Information and Approximation Errors in Forward Learning via Tri-Stream Coupled Dynamics},
     author={Anonymous Authors},
     booktitle={Under Review for International Conference on Machine Learning (ICML)},
     year={2026}
